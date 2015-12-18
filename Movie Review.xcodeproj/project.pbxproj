@@ -12,6 +12,11 @@
 		8185E32D1C1FB28900C6CFD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8185E32B1C1FB28900C6CFD3 /* Main.storyboard */; };
 		8185E32F1C1FB28900C6CFD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8185E32E1C1FB28900C6CFD3 /* Assets.xcassets */; };
 		8185E3321C1FB28900C6CFD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8185E3301C1FB28900C6CFD3 /* LaunchScreen.storyboard */; };
+		8185E33D1C1FB4DE00C6CFD3 /* ReviewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185E33C1C1FB4DE00C6CFD3 /* ReviewPost.swift */; };
+		8185E3401C1FF5D500C6CFD3 /* ReviewPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185E33F1C1FF5D500C6CFD3 /* ReviewPostCell.swift */; };
+		8185E3421C2226F400C6CFD3 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185E3411C2226F400C6CFD3 /* AddPostVC.swift */; };
+		8185E3441C2235AF00C6CFD3 /* DisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185E3431C2235AF00C6CFD3 /* DisplayVC.swift */; };
+		8185E3471C23BA7600C6CFD3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185E3461C23BA7600C6CFD3 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		8185E32E1C1FB28900C6CFD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8185E3311C1FB28900C6CFD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8185E3331C1FB28900C6CFD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8185E33C1C1FB4DE00C6CFD3 /* ReviewPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPost.swift; sourceTree = "<group>"; };
+		8185E33F1C1FF5D500C6CFD3 /* ReviewPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPostCell.swift; sourceTree = "<group>"; };
+		8185E3411C2226F400C6CFD3 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		8185E3431C2235AF00C6CFD3 /* DisplayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayVC.swift; sourceTree = "<group>"; };
+		8185E3461C23BA7600C6CFD3 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,43 @@
 		8185E3261C1FB28900C6CFD3 /* Movie Review */ = {
 			isa = PBXGroup;
 			children = (
+				8185E3451C23BA5A00C6CFD3 /* Services */,
+				8185E33E1C1FF5C000C6CFD3 /* View */,
+				8185E3391C1FB44F00C6CFD3 /* Model */,
 				8185E3271C1FB28900C6CFD3 /* AppDelegate.swift */,
 				8185E3291C1FB28900C6CFD3 /* ViewController.swift */,
 				8185E32B1C1FB28900C6CFD3 /* Main.storyboard */,
 				8185E32E1C1FB28900C6CFD3 /* Assets.xcassets */,
 				8185E3301C1FB28900C6CFD3 /* LaunchScreen.storyboard */,
 				8185E3331C1FB28900C6CFD3 /* Info.plist */,
+				8185E33C1C1FB4DE00C6CFD3 /* ReviewPost.swift */,
+				8185E3411C2226F400C6CFD3 /* AddPostVC.swift */,
+				8185E3431C2235AF00C6CFD3 /* DisplayVC.swift */,
 			);
 			path = "Movie Review";
+			sourceTree = "<group>";
+		};
+		8185E3391C1FB44F00C6CFD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8185E33E1C1FF5C000C6CFD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8185E33F1C1FF5D500C6CFD3 /* ReviewPostCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8185E3451C23BA5A00C6CFD3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8185E3461C23BA7600C6CFD3 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +135,7 @@
 				TargetAttributes = {
 					8185E3231C1FB28900C6CFD3 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = X2E3X7D3QU;
 					};
 				};
 			};
@@ -135,8 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8185E33D1C1FB4DE00C6CFD3 /* ReviewPost.swift in Sources */,
+				8185E3471C23BA7600C6CFD3 /* DataService.swift in Sources */,
 				8185E32A1C1FB28900C6CFD3 /* ViewController.swift in Sources */,
+				8185E3421C2226F400C6CFD3 /* AddPostVC.swift in Sources */,
 				8185E3281C1FB28900C6CFD3 /* AppDelegate.swift in Sources */,
+				8185E3401C1FF5D500C6CFD3 /* ReviewPostCell.swift in Sources */,
+				8185E3441C2235AF00C6CFD3 /* DisplayVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Movie Review/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.femtobyte.Movie-Review";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -258,10 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Movie Review/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.femtobyte.Movie-Review";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -284,6 +335,7 @@
 				8185E3381C1FB28900C6CFD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
