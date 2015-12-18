@@ -45,9 +45,9 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
-        if let title = titleField.text, let img = movieImage.image, let desc = descriptionField.text, let link = linkField.text, let plot = plotLinkField.text {
+        if let title = titleField.text, let img = movieImage.image, let desc = descriptionField.text {
             let imgPath = DataService.instance.saveImgPath(img)
-            let post = ReviewPost(imgPath: imgPath, postTitle: title, postDesc: desc, imdbLink: link, imdbPlot: plot)
+            let post = ReviewPost(imgPath: imgPath, postTitle: title, postDesc: desc, imdbLink: "", imdbPlot: "" )
             DataService.instance.addPost(post)
             dismissViewControllerAnimated(true, completion: nil)
         }
