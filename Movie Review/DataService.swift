@@ -12,11 +12,42 @@ import UIKit
 class DataService {
     static let instance = DataService()
     
+    private var _linkURL:String = ""
+    private var _plotURL:String = ""
+    
     let KEY_POSTS = "posts"
     private var _loadedPosts = [ReviewPost]()
     
     var loadedPosts: [ReviewPost] {
         return _loadedPosts
+    }
+    
+    var linkURL: String{
+        get{
+            return _linkURL
+        }
+        
+        set{
+            _linkURL = linkURL
+        }
+    }
+    
+    var plotURL: String{
+        get{
+            return _plotURL
+        }
+        
+        set{
+            _plotURL = plotURL
+        }
+    }
+
+    func saveLink(urlString: String){
+        _linkURL = urlString
+    }
+    
+    func savePlot(url: String){
+        _plotURL = url
     }
     
     func savePosts() {
@@ -32,6 +63,11 @@ class DataService {
             }
         }
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "postsLoaded", object: nil))
+    }
+    
+    func deletePost(index:Int) {
+        _loadedPosts.removeAtIndex(index)
+        savePosts()
     }
     
     func imageForPath(path: String) -> UIImage? {

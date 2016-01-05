@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WebKit
 
-class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, WebVCProtocol {
 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
@@ -16,7 +17,10 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBOutlet weak var plotLinkField: UITextField!
     @IBOutlet weak var movieImage: UIImageView!
     
+    
     var imagePicker: UIImagePickerController!
+    var saveLink: String! = ""
+    var savePlot: String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         linkField.delegate = self
         plotLinkField.delegate = self
     }
-        
+
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -38,8 +42,18 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-
+    
+    func sendLinkToBeSaved(newURL:String, plot: Bool){
+        let plotStatus = plot
+        if plotStatus == true{
+            self.plotLinkField.text = newURL
+            savePlot = plotLinkField.text
+        }else{
+            self.linkField.text = newURL
+            saveLink = linkField.text
+        }
+    }
+   
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -47,7 +61,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBAction func saveBtnPressed(sender: AnyObject) {
         if let title = titleField.text, let img = movieImage.image, let desc = descriptionField.text {
             let imgPath = DataService.instance.saveImgPath(img)
-            let post = ReviewPost(imgPath: imgPath, postTitle: title, postDesc: desc, imdbLink: "", imdbPlot: "" )
+            let post = ReviewPost(imgPath: imgPath, postTitle: title, postDesc: desc, imdbLink: saveLink, imdbPlot: savePlot)
             DataService.instance.addPost(post)
             dismissViewControllerAnimated(true, completion: nil)
         }
@@ -62,13 +76,24 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         movieImage.image = image
     }
-
-    @IBAction func addIMDbLink(sender: AnyObject) {
-        
+    
+    @IBAction func addIMDBLink(sender: AnyObject) {
+        performSegueWithIdentifier("goToWebVC", sender: self)
     }
     
-    @IBAction func addIMDbPost(sender: AnyObject) {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToWebVC"{
+            if let webVC = segue.destinationViewController as? WebVC{
+                // this sets the webVC delegate, important part of delegate/protocol:
+                webVC.delegate = self
+                if linkField.text != nil && linkField.text != "" {
+                    print(linkField.text)
+                    webVC.startURL = linkField.text!
+                }else{
+                    webVC.startURL = "https://www.google.com"
+                }
+                webVC.viewTitleString = "Add Link"
+            }
+        }
     }
-
 }

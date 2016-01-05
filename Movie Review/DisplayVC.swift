@@ -10,51 +10,71 @@ import UIKit
 
 class DisplayVC: UIViewController {
     
+    @IBOutlet weak var displayViewTitle: UILabel!
     @IBOutlet weak var displayImg: UIImageView!
     @IBOutlet weak var displayTitle: UILabel!
     @IBOutlet weak var displayDesc: UILabel!
-    @IBOutlet weak var displayLink: UILabel!
-    @IBOutlet weak var displayPlot: UILabel!
+    @IBOutlet weak var movieInfo: UIButton!
+    @IBOutlet weak var moviePlot: UIButton!
     
     var transferPost: ReviewPost!
+    var goToLink: String!
+    var button: UIButton!
+    var linkText: String!
+    var plotText: String!
     
     override func viewDidLoad() {
+        displayImg.layer.cornerRadius = 15.0
+        displayImg.clipsToBounds = true
         super.viewDidLoad()
-        configureDisplay(transferPost)
+        configureDisplay(self.transferPost)
+        
     }
     
     func configureDisplay(post: ReviewPost){
+        displayViewTitle.text = post.postTitle
         displayTitle.text = post.postTitle
         displayDesc.text = post.postDesc
-        displayLink.text = post.imdbLink
+        linkText = post.imdbLink
         displayImg.image = DataService.instance.imageForPath(post.imgPath)
-        displayPlot.text = post.imdbPlot
-    }
-
- 
-    
-    override func viewWillAppear(animated: Bool) {
-
-
+        plotText = post.imdbPlot
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onBackBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func onMovieInfoPressed(sender: AnyObject) {
+        print("\(sender.tag)")
+        button = sender as? UIButton
+        performSegueWithIdentifier("displayToWebVC", sender: button)
+    }
+   
+    @IBAction func onMoviePlotPressed(sender: AnyObject) {
+        print("\(sender.tag)")
+        button = sender as? UIButton
+        performSegueWithIdentifier("displayToWebVC", sender: button)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "displayToWebVC"{
+            if let webVC = segue.destinationViewController as? WebVC{
+                if button!.tag == 1 {
+                    webVC.startURL = "\(linkText)"
+                    webVC.viewTitleString = "Movie Link"
+                }else if button!.tag == 2{
+                    webVC.startURL = "\(plotText)"
+                    webVC.viewTitleString = "Movie Plot"
+                }else{
+                    webVC.startURL = "https://www.google.com"
+                }
+                webVC.hideBottomBar = true
+            }
+        }
     }
-    */
-
 }
