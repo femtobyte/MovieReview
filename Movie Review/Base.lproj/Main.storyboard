@@ -378,7 +378,7 @@
                                             <accessibilityTraits key="traits" link="YES"/>
                                         </accessibility>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL"/>
                                     </textField>
                                 </subviews>
@@ -568,6 +568,6 @@
         <image name="emptyImage" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a1b-qx-2AX"/>
+        <segue reference="Hkr-cs-xWb"/>
     </inferredMetricsTieBreakers>
 </document>

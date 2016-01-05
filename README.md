@@ -3,5 +3,7 @@ Swift iOS Course project
 
 
 
-known bug: fatal error attempting to pass data from tableView Cell to DisplayVC.  unexpectedly found a nil while unwrapping an Optional value.
-From what I can tell, the error generates after the segue, in viewDidLoad of the DisplayVC.
+2 issues that I am dealing with are:
+
+- WKWebView won't load IMDb.  It will load other websites, although not all.  
+- Some pics from photo album are turned sideways when saved.  I thought it might have to do with the position of the camera when photo was taken, but not sure.
