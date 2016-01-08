@@ -50,11 +50,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         let index:Int = indexPath.row
-        print("\(DataService.instance.loadedPosts.count)")
         if editingStyle == UITableViewCellEditingStyle.Delete{
             DataService.instance.deletePost(index)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            print("\(DataService.instance.loadedPosts.count)")
         }
     }
 
@@ -71,6 +69,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func onPostsLoaded(notif: AnyObject){
         tableView.reloadData()
     }
-    
 }
 
