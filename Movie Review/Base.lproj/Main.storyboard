@@ -401,7 +401,7 @@
                                             <action selector="addIMDBLink:" destination="vyk-I8-Ip9" eventType="touchUpInside" id="GsA-KF-feE"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="https://www.google.com" borderStyle="roundedRect" placeholder="Type in or get IMDb link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-et-6jr">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="http://m.imdb.com" borderStyle="roundedRect" placeholder="Type in or get IMDb link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-et-6jr">
                                         <rect key="frame" x="0.0" y="126" width="600" height="30"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" link="YES"/>
@@ -413,7 +413,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="https://www.google.com" borderStyle="roundedRect" placeholder="Type in or use Get Link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-cQ-DR9" userLabel="Plot Link Field">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="http://m.imdb.com" borderStyle="roundedRect" placeholder="Type in or use Get Link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-cQ-DR9" userLabel="Plot Link Field">
                                         <rect key="frame" x="0.0" y="166" width="600" height="30"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" link="YES"/>
@@ -462,9 +462,9 @@
                                 <exclude reference="ARZ-wB-5az"/>
                                 <exclude reference="li9-AJ-km3"/>
                                 <exclude reference="tLW-vn-oQb"/>
-                                <exclude reference="5gO-pM-6zD"/>
                                 <exclude reference="U1J-ma-z0e"/>
                                 <exclude reference="aci-7Q-G5F"/>
+                                <exclude reference="5gO-pM-6zD"/>
                                 <exclude reference="yjM-q5-j4p"/>
                             </mask>
                         </variation>

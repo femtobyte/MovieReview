@@ -41,7 +41,7 @@ class WebVC: UIViewController {
         if startURL != nil && startURL != ""{
             loadRequest(startURL)
         } else {
-            startURL = "https://www.google.com"
+            startURL = "http://m.imdb.com"
         }
     }
 

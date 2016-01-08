@@ -90,7 +90,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                     print(linkField.text)
                     webVC.startURL = linkField.text!
                 }else{
-                    webVC.startURL = "https://www.google.com"
+                    webVC.startURL = "http://m.imdb.com"
                 }
                 webVC.viewTitleString = "Add Link"
             }
