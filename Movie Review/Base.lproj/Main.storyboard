@@ -240,27 +240,29 @@
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-gw-eP8">
-                                <rect key="frame" x="40" y="240" width="540" height="170"/>
+                                <rect key="frame" x="30" y="80" width="540" height="520"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWr-Sx-kI0">
-                                        <rect key="frame" x="0.0" y="0.0" width="540" height="50"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWr-Sx-kI0">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="400"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="400" id="DEO-y2-clf"/>
                                             <constraint firstAttribute="height" constant="400" id="Nz5-J2-hnl"/>
                                             <constraint firstAttribute="width" constant="400" id="bCa-de-TPq"/>
                                             <constraint firstAttribute="width" secondItem="oWr-Sx-kI0" secondAttribute="height" multiplier="1:1" id="fk6-oY-JV4"/>
-                                            <constraint firstAttribute="height" constant="400" id="jrp-9p-Wz7"/>
+                                            <constraint firstAttribute="height" constant="600" id="jrp-9p-Wz7"/>
+                                            <constraint firstAttribute="width" secondItem="oWr-Sx-kI0" secondAttribute="height" multiplier="27:20" id="ykH-pF-ky0"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Nz5-J2-hnl"/>
                                                 <exclude reference="bCa-de-TPq"/>
                                                 <exclude reference="fk6-oY-JV4"/>
+                                                <exclude reference="ykH-pF-ky0"/>
                                             </mask>
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWi-jl-5hC">
-                                        <rect key="frame" x="0.0" y="70" width="540" height="100"/>
+                                        <rect key="frame" x="0.0" y="420" width="540" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="84x-zN-jhl"/>
                                         </constraints>
