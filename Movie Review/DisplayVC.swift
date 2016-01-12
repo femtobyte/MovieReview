@@ -65,7 +65,7 @@ class DisplayVC: UIViewController {
                     webVC.startURL = "\(plotText)"
                     webVC.viewTitleString = "Movie Plot"
                 }else{
-                    webVC.startURL = "https://www.google.com"
+                    webVC.startURL = "https://www.imdb.com"
                 }
                 webVC.hideBottomBar = true
             }

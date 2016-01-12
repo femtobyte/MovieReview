@@ -240,10 +240,10 @@
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-gw-eP8">
-                                <rect key="frame" x="14" y="84" width="400" height="525"/>
+                                <rect key="frame" x="40" y="240" width="540" height="170"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWr-Sx-kI0">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="405"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="400" id="DEO-y2-clf"/>
                                             <constraint firstAttribute="height" constant="400" id="Nz5-J2-hnl"/>
@@ -260,7 +260,7 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWi-jl-5hC">
-                                        <rect key="frame" x="0.0" y="425" width="400" height="100"/>
+                                        <rect key="frame" x="0.0" y="70" width="540" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="84x-zN-jhl"/>
                                         </constraints>
@@ -277,10 +277,13 @@
                             <constraint firstAttribute="trailing" secondItem="Dh5-v8-Pg0" secondAttribute="trailing" constant="50" id="JWL-1X-io7"/>
                             <constraint firstItem="7aH-gw-eP8" firstAttribute="centerX" secondItem="ujA-f0-Tqq" secondAttribute="centerX" id="KDD-aL-4LP"/>
                             <constraint firstItem="gxx-AO-rst" firstAttribute="leading" secondItem="ujA-f0-Tqq" secondAttribute="leading" id="LeA-2S-fpH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7aH-gw-eP8" secondAttribute="trailing" constant="10" id="M5w-4p-d2w"/>
+                            <constraint firstItem="7aH-gw-eP8" firstAttribute="leading" secondItem="ujA-f0-Tqq" secondAttribute="leadingMargin" constant="10" id="RAp-5f-OdA"/>
                             <constraint firstItem="Dh5-v8-Pg0" firstAttribute="leading" secondItem="ujA-f0-Tqq" secondAttribute="leading" id="S2G-Zg-XCS"/>
                             <constraint firstItem="Oev-Ad-ZdF" firstAttribute="leading" secondItem="ujA-f0-Tqq" secondAttribute="leading" id="SdH-rM-7En"/>
                             <constraint firstAttribute="bottom" secondItem="gxx-AO-rst" secondAttribute="bottom" id="aht-BU-7KO"/>
                             <constraint firstAttribute="trailing" secondItem="Oev-Ad-ZdF" secondAttribute="trailing" id="iqJ-uV-B0G"/>
+                            <constraint firstItem="7aH-gw-eP8" firstAttribute="top" secondItem="Dh5-v8-Pg0" secondAttribute="bottom" constant="10" id="rBb-Zh-PMz"/>
                             <constraint firstItem="7aH-gw-eP8" firstAttribute="centerY" secondItem="ujA-f0-Tqq" secondAttribute="centerY" id="tTg-ec-ggI"/>
                             <constraint firstAttribute="trailing" secondItem="gxx-AO-rst" secondAttribute="trailing" id="vPo-lC-1ZZ"/>
                             <constraint firstItem="Dh5-v8-Pg0" firstAttribute="top" secondItem="t1S-Va-ly9" secondAttribute="bottom" id="zLi-jd-yjv"/>
@@ -295,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQB-VA-fxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="1140"/>
+            <point key="canvasLocation" x="967" y="1207"/>
         </scene>
         <!--Add PostVC-->
         <scene sceneID="k3W-SK-e9U">
@@ -323,6 +326,18 @@
                                     <constraint firstAttribute="height" constant="70" id="gke-Ab-Bms"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ Add Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-la-6qd">
+                                <rect key="frame" x="180" y="200" width="182" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="182" id="Ac3-uv-7t3"/>
+                                    <constraint firstAttribute="height" constant="170" id="OKf-4L-P87"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="h3V-xk-5DD"/>
+                                    <constraint firstAttribute="width" constant="182" id="uoW-iI-xJ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aog-bv-B8P" customClass="BackButton" customModule="Movie_Review" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="50" height="50"/>
                                 <constraints>
@@ -346,19 +361,8 @@
                                     <action selector="saveBtnPressed:" destination="vyk-I8-Ip9" eventType="touchUpInside" id="NhP-xr-5Pd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi5-7F-nZs">
-                                <rect key="frame" x="180" y="130" width="240" height="240"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="1" minY="1" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="+Add Image">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="addImage:" destination="vyk-I8-Ip9" eventType="touchUpInside" id="tzu-Zc-vB9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-up-Xxt">
-                                <rect key="frame" x="173" y="30" width="256" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-up-Xxt">
+                                <rect key="frame" x="172" y="30" width="256" height="40"/>
                                 <fontDescription key="fontDescription" name="Pleasantly-Plump" family="Pleasantly Plump" pointSize="30"/>
                                 <color key="textColor" red="0.29411764709999999" green="0.1137254902" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -401,35 +405,75 @@
                                             <action selector="addIMDBLink:" destination="vyk-I8-Ip9" eventType="touchUpInside" id="GsA-KF-feE"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="http://m.imdb.com" borderStyle="roundedRect" placeholder="Type in or get IMDb link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-et-6jr">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O05-OP-gc8">
                                         <rect key="frame" x="0.0" y="126" width="600" height="30"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" link="YES"/>
-                                        </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="fKR-tO-xil"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="URL"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="http://m.imdb.com" borderStyle="roundedRect" placeholder="Type in or use Get Link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-cQ-DR9" userLabel="Plot Link Field">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb link: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1V-Yv-rZy">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="VCy-r8-FNo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="http://www.imdb.com" borderStyle="roundedRect" placeholder="Type in or get IMDb link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-et-6jr">
+                                                <rect key="frame" x="100" y="0.0" width="500" height="30"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" link="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fKR-tO-xil"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJR-Gt-cNO">
                                         <rect key="frame" x="0.0" y="166" width="600" height="30"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" link="YES"/>
-                                        </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Iaq-XJ-JKL"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="URL"/>
-                                    </textField>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plot link: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="267-i6-qA5">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="k3P-zr-2es"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="http://www.imdb.com" borderStyle="roundedRect" placeholder="Type in or use Get Link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-cQ-DR9" userLabel="Plot Link Field">
+                                                <rect key="frame" x="100" y="0.0" width="500" height="30"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" link="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Iaq-XJ-JKL"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi5-7F-nZs">
+                                <rect key="frame" x="180" y="130" width="240" height="240"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="1" minY="1" maxX="0.0" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addImage:" destination="vyk-I8-Ip9" eventType="touchUpInside" id="tzu-Zc-vB9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="e1f-la-6qd" firstAttribute="bottom" secondItem="Ptl-P4-FBa" secondAttribute="bottom" id="2La-Ex-GSz"/>
                             <constraint firstAttribute="trailing" secondItem="WTu-Ng-Hdr" secondAttribute="trailing" id="2S8-tF-hjf"/>
                             <constraint firstItem="hlW-up-Xxt" firstAttribute="centerX" secondItem="hqg-tc-aZc" secondAttribute="centerX" id="5eu-W8-Goi"/>
                             <constraint firstItem="Ptl-P4-FBa" firstAttribute="top" secondItem="hlW-up-Xxt" secondAttribute="bottom" id="5gO-pM-6zD"/>
@@ -447,6 +491,7 @@
                             <constraint firstItem="hlW-up-Xxt" firstAttribute="centerY" secondItem="MQ1-SJ-5ch" secondAttribute="centerY" id="aci-7Q-G5F"/>
                             <constraint firstItem="aGq-18-d2R" firstAttribute="trailing" secondItem="hqg-tc-aZc" secondAttribute="trailingMargin" constant="10" id="cO3-LI-8Za"/>
                             <constraint firstItem="aGq-18-d2R" firstAttribute="bottom" secondItem="MQ1-SJ-5ch" secondAttribute="bottom" constant="-5" id="ey0-9n-nzP"/>
+                            <constraint firstItem="e1f-la-6qd" firstAttribute="leading" secondItem="Ptl-P4-FBa" secondAttribute="leading" id="kKf-A0-QA5"/>
                             <constraint firstItem="aog-bv-B8P" firstAttribute="centerY" secondItem="MQ1-SJ-5ch" secondAttribute="centerY" id="li9-AJ-km3"/>
                             <constraint firstItem="hlW-up-Xxt" firstAttribute="top" secondItem="hqg-tc-aZc" secondAttribute="topMargin" constant="30" id="mOb-GP-0ik"/>
                             <constraint firstItem="hlW-up-Xxt" firstAttribute="bottom" secondItem="MQ1-SJ-5ch" secondAttribute="bottom" id="o98-Jw-w5K"/>
@@ -470,6 +515,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="addImageLbl" destination="e1f-la-6qd" id="FHH-Sa-Wt4"/>
                         <outlet property="descriptionField" destination="bMX-HD-MN0" id="idn-EY-m9n"/>
                         <outlet property="linkField" destination="CPz-et-6jr" id="DPp-wP-MhY"/>
                         <outlet property="movieImage" destination="Ptl-P4-FBa" id="fdw-52-Eyw"/>
@@ -598,6 +644,6 @@
         <image name="outline2" width="240" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hkr-cs-xWb"/>
+        <segue reference="a1b-qx-2AX"/>
     </inferredMetricsTieBreakers>
 </document>

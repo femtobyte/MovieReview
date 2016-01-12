@@ -16,6 +16,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     @IBOutlet weak var linkField: UITextField!
     @IBOutlet weak var plotLinkField: UITextField!
     @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var addImageLbl: UILabel!
     
     
     var imagePicker: UIImagePickerController!
